@@ -12,12 +12,11 @@ createApp({
             logoImage : './img/logo.png',
             error:false,
             newTask:'',
-            verificato:"verificato",
             nonVerificato:"",
             tasks : [
-                {"text":"Fare i compiti", "done":false},
-                {"text":"Fare la spesa", "done":false},
-                {"text":"Fare il bucato", "done":false}
+                {"text":"Chillare 😎", "done":false},
+                {"text":"Go to the gym 💪", "done":false},
+                {"text":"Sends email 📧", "done":false}
             ]
         }
     },
