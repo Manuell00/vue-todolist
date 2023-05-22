@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Copio il link di font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Definisco il title -->
+    <title>ToDoList with Vue</title>
+
+    <!-- Collego il foglio di stile  -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+     <!-- Creo il container sul quale monterò il createApp -->
+     <div id="app" class="container">
+
+        <!-- Inserisco il logo -->
+        <div class="logo">
+            <h1>Manuel's ToDoList</h1><img :src="logoImage" alt="logo">
+        </div>
+
+        <!-- Gestisco la nuova task -->
+        <div class="new-task">
+            <input type="text" placeholder="Nuova task" v-model="newTask" @keyup.enter="aggiungiTask">
+            <button @click="aggiungiTask">Aggiungi</button>
+
+            <!-- Gestisco l'errore -->
+            <div class="error" v-if="error">
+                <small>Devi inserire un task di almeno 5 caratteri</small>
+            </div>
+        </div>
+
+
+        <!-- Creo un container contenente una lista dei miei task -->
+        <div class="tasks-container">
+            <ol>
+                <li class="task" v-for="(task,index) in tasks">{{task.text}}<i class="fas fa-times"
+                        @click="rimuoviTask(index)"></i></li>
+            </ol>
+
+            <!-- Gestisco la condizione per cui non ci sono task -->
+            <h2 v-if="tasks.lenght === 0">Non ci sono task 🫡</h2>
+        </div>
+    </div>
+
+    <!-- Inserisco i collegamenti vue e il file js -->
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
