@@ -42,7 +42,7 @@
         <!-- Creo un container contenente una lista dei miei task -->
         <div class="tasks-container">
             <ol>
-                <li class="task" v-for="(task,index) in tasks">{{task.text}}<i class="fas fa-times"
+                <li class="task" @click="taskComplete" v-for="(task,index) in tasks">{{task.text}}<i class="fas fa-times"
                         @click="rimuoviTask(index)"></i></li>
             </ol>
 

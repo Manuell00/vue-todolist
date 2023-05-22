@@ -34,25 +34,25 @@ createApp({
     methods: {
         aggiungiTask(){
             // Utilizzo unshift per aggiornare l'array a inizio pagina
-            if ((this.newTask != '') && (this.newTask.lenght >= 5)) {
+            if (this.newTask !== '' && this.newTask.length >= 5) {
                 this.tasks.unshift({"text":this.newTask, "done":false});
-                this.error = false
+                this.error = false;
             }
 
             else{
-                this.error = true
+                this.error = true;
             }
 
             this.newTask = '';
-            console.log(this.error);
-            console.log(this.tasks);
-            console.log(this.newTask)
         },
 
         rimuoviTask(indice){
             this.tasks.splice(indice,1)
+        },
+
+        taskComplete(){
+            this.tasks.done = true
+            console.log(this.tasks.done);
         }
     }
 }).mount("#app");
-
-tasks.lenght
