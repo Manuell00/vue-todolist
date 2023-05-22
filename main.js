@@ -12,7 +12,7 @@ createApp({
             logoImage : './img/logo.png',
             error:false,
             newTask:'',
-            verificato:"verify",
+            verificato:"verificato",
             nonVerificato:"",
             tasks : [
                 {"text":"Fare i compiti", "done":false},
@@ -41,15 +41,9 @@ createApp({
             this.tasks.splice(indice,1)
         },
 
-        taskComplete(){
-            if (this.tasks.done === true) {
-                this.tasks.done = false
-            }
-
-            else{
-                this.tasks.done = true
-            }
-            console.log(this.tasks.done);
+        taskComplete(task){
+            task.done = !task.done;
+            console.log(task.done);
         }
     }
 }).mount("#app");
