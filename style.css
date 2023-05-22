@@ -60,3 +60,7 @@
     border: 2px solid white;
 }
 
+.verificato{
+    text-decoration:line-through;
+}
+

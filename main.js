@@ -12,6 +12,8 @@ createApp({
             logoImage : './img/logo.png',
             error:false,
             newTask:'',
+            verificato:"verify",
+            nonVerificato:"",
             tasks : [
                 {"text":"Fare i compiti", "done":false},
                 {"text":"Fare la spesa", "done":false},
@@ -47,6 +49,7 @@ createApp({
             else{
                 this.tasks.done = true
             }
+            console.log(this.tasks.done);
         }
     }
 }).mount("#app");
